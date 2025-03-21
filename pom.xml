@@ -24,6 +24,7 @@
         <module>twitter-to-kafka-service</module>
         <module>app-config-data</module>
         <module>kafka</module>
+        <module>common-config</module>
     </modules>
     <scm>
         <connection/>
@@ -40,13 +41,21 @@
         <twitter4j.version>4.0.7</twitter4j.version>
         <lombok.version>1.18.30</lombok.version>
         <avro.version>1.11.0</avro.version>
+        <spring-kafka.version>2.8.2</spring-kafka.version>
+        <spring-retry.version>2.0.11</spring-retry.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- LOCAL -->
             <dependency>
                 <groupId>com.microservices.demo</groupId>
                 <artifactId>app-config-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>common-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -66,6 +75,17 @@
                 <artifactId>twitter4j-stream</artifactId>
                 <version>${twitter4j.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.retry</groupId>
+                <artifactId>spring-retry</artifactId>
+                <version>${spring-retry.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
